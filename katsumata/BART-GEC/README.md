@@ -15,6 +15,10 @@
         - Follow **Installing from source** instead of raw pip installing
         - Copy over [metrics.py](https://github.com/Katsumata420/generic-pretrained-GEC/blob/master/BART-GEC/fairseq/metrics.py) and [meters.py](https://github.com/Katsumata420/generic-pretrained-GEC/blob/master/BART-GEC/fairseq/meters.py) from Katsumata's repo and place inside newly created `fairseq/fairseq/` folder
 
+    - Install additional dependencies
+
+        - `pip install -r katsumata/requirements.txt`
+
     - Install BART model to use
 
         - Install under `katsumata/BART-GEC/wi+locness/` folder

@@ -104,7 +104,10 @@ To install fairseq from source and develop locally:
 ```bash
 git clone https://github.com/pytorch/fairseq
 cd fairseq
+
 pip install --editable .
+# Or on Mac:
+CFLAGS="-stdlib=libc++" pip install --editable ./
 ```
 
 # Getting Started

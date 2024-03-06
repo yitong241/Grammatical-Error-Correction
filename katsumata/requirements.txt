@@ -1,0 +1,7 @@
+
+# Do not install fairseq through pip install
+# as you cannot train bart-base with fairseq installed through pip
+# Follow steps outlined in katsumata/BART-GEC/README.md
+
+requests==2.31.0
+lxml==4.9.4
