@@ -10,6 +10,10 @@ Cloned for use in CS4248 Project from [this repo](https://github.com/Katsumata42
 - multilingual BART GEC (not included in our project)
 - MASS GEC (not included in our project)
 
+## Get Started
+
+See [BART-GEC README](./BART-GEC/README.md)
+
 ## License
 See the LICENSE file.
 

@@ -14,3 +14,4 @@ katsumata/BART-GEC/wi+locness/test/txt
 .vscode
 **/__pycache__
 venv
+**/.DS_Store

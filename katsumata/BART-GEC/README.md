@@ -5,7 +5,7 @@
   - original commit id: 9f4256e [[link]](https://github.com/pytorch/fairseq/tree/9f4256edf60554afbcaadfa114525978c141f2bd)
   - fairseq README: `FAIRSEQ_README.md`
 
-## Before Running
+## Before Running _\[Added by us\]_
 
 1. Install dependencies
 
@@ -14,6 +14,20 @@
         - First, remove existing `fairseq` and `fairseq_cli` directories
         - Follow **Installing from source** instead of raw pip installing
         - Copy over [metrics.py](https://github.com/Katsumata420/generic-pretrained-GEC/blob/master/BART-GEC/fairseq/metrics.py) and [meters.py](https://github.com/Katsumata420/generic-pretrained-GEC/blob/master/BART-GEC/fairseq/meters.py) from Katsumata's repo and place inside newly created `fairseq/fairseq/` folder
+
+    - Install BART model to use
+
+        - Install under `katsumata/BART-GEC/wi+locness/` folder
+        - After installation, directory structure should look something like
+
+        ```md
+        # Assuming BART-base was installed
+        |-- katsumata/BART-GEC/wi+locness/
+        |   |-- bart.base/
+        |       |-- dict.txt
+        |       |-- model.pt
+        |       |-- NOTE
+        ```
 
     - Install `lxml` dependencies
 
