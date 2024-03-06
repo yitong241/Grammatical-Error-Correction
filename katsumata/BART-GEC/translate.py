@@ -13,8 +13,8 @@ output_path = os.path.join(output_dir, "hyp.txt")
 
 bart = BARTModel.from_pretrained(
     model_dir,
-    checkpoint_file='checkpoint_best.pt',
-    data_name_or_path='gec_data-bin'
+    checkpoint_file='gec_bart/checkpoint_best.pt',
+    data_name_or_path='./gec_data-bin'
 )
 
 # bart.cuda()
