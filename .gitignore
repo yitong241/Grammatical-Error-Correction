@@ -1,3 +1,4 @@
-m2scorer.tar.gz
-m2scorer/
-errant_env/
+# Folders/Files under esc
+esc/m2scorer.tar.gz
+esc/m2scorer/
+esc/errant_env/
