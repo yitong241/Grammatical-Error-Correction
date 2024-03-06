@@ -1,4 +1,16 @@
-# Folders/Files under esc
+# Folders/Files under esc/
 esc/m2scorer.tar.gz
 esc/m2scorer/
 esc/errant_env/
+
+# Folders/Files under katsumata/
+katsumata/**/bart.base
+katsumata/**/bart.large
+katsumata/**/bpe
+katsumata/BART-GEC/wi+locness/test/hyp.txt
+katsumata/BART-GEC/wi+locness/test/txt
+
+# Global folders/files
+.vscode
+**/__pycache__
+venv
