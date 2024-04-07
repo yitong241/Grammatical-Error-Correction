@@ -18,7 +18,7 @@ bart = BARTModel.from_pretrained(
 )
 
 bart2 = BARTModel.from_pretrained(
-    'model/gec_bart2,
+    'model/gec_bart2',
     checkpoint_file='checkpoint_best.pt',
     data_name_or_path='gec_data-bin'
 )
