@@ -110,6 +110,11 @@ pip install --editable .
 CFLAGS="-stdlib=libc++" pip install --editable ./
 ```
 
+If you get `"cannot import [module] from fairseq"` errors, try running the following inside the `fairseq` directory as well:
+```bash
+python setup.py build_ext --inplace
+```
+
 # Getting Started
 
 The [full documentation](https://fairseq.readthedocs.io/) contains instructions

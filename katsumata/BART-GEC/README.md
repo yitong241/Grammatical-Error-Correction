@@ -7,6 +7,11 @@
 
 ## Before Running _\[Added by us\]_
 
+1. Install an earlier version of Python
+
+    - I tried Python3.8 and it seems to work fine for the most part
+    - Made a few tweaks here and there (e.g., change `np.float` to `float`)
+
 1. Install dependencies
 
     - [See Fairseq requirements and installation](./FAIRSEQ_README.md#requirements-and-installation)
@@ -45,15 +50,6 @@
             brew install brew install libxml2 libxslt
             # Don't know for Windows...sorry
             ```
-
-        1. Build Cython components
-
-            - Run `python setup.py build_ext --inplace`
-
-1. Might need to install an earlier version of Python
-
-    - I tried Python3.8 and it seems to work fine for the most part
-    - Made a few tweaks here and there (e.g., change `np.float` to `float`)
 
 1. Install datasets and preprocess them
 
