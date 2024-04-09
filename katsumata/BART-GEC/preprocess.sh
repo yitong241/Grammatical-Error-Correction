@@ -3,7 +3,7 @@
 
 # If CEFR_LEVEL is not provided, default to ABC
 CEFR_LEVEL=$1
-if [[ (-z $1) || ($1 != A && $1 != B && $1 != C && $1 != ABC) ]]; then
+if [[ (-z $1) || ($1 != A && $1 != B && $1 != C && $1 != AB && $1 != ABC) ]]; then
     CEFR_LEVEL=ABC
 fi
 
