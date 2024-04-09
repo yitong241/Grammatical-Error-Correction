@@ -105,7 +105,7 @@ for source_txt, target_txt in zip(source_texts, target_texts):
     results.append((source_txt, target_txt, loss))
 
 sorted_results = sorted(results, key=lambda x: x[2])
-with open(output_source, "w") as fout_s, open(output_target, "w") as fout_t:
+with open(output_source, "a+") as fout_s, open(output_target, "a+") as fout_t:
     for sample in sorted_results:
         source, target, loss = sample
         fout_s.write(f"{source}\n")
