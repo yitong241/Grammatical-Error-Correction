@@ -1,15 +1,15 @@
 # Example command:
-# ./apply_bpe.sh [CEFR_LEVEL]
+# ./apply_bpe.sh [TRAIN] [DEV]
 
-# If CEFR_LEVEL is not provided, default to ABC
-CEFR_LEVEL=$1
-if [[ (-z $1) || ($1 != A && $1 != B && $1 != C && $1 != AB && $1 != ABC) ]]; then
-    CEFR_LEVEL=ABC
+# If TRAIN is not provided, default to ABC
+TRAIN=$1
+if [[ -z $1 ]]; then
+    TRAIN=ABC
 fi
 
-TRAIN=$CEFR_LEVEL
-DEV=$CEFR_LEVEL
-if [[ $DEV = ABC ]]; then
+# If DEV is not provided, default to ABCN
+DEV=$2
+if [[ -z $2 ]]; then
     DEV=ABCN
 fi
 
