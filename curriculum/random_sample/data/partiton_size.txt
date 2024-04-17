@@ -1,0 +1,10 @@
+Sampling 0/5 [train] | Actual: 10775, 16104 | Sampled: 11085, 14495
+Sampling 0/5 [ dev ] | Actual: 1314 , 2009  | Sampled: 1406, 1811
+Sampling 1/5 [train] | Actual: 22038, 27367 | Sampled: 20985, 30407
+Sampling 1/5 [ dev ] | Actual: 2842 , 3537  | Sampled: 2792, 3930
+Sampling 2/5 [train] | Actual: 33037, 66490 | Sampled: 33037, 66058
+Sampling 2/5 [ dev ] | Actual: 4224 , 8210  | Sampled: 4224, 8008
+Sampling 3/5 [train] | Actual: 34000, 73297 | Sampled: 34000, 71618
+Sampling 3/5 [ dev ] | Actual: 4347 , 8989  | Sampled: 4347, 8713
+Sampling 4/5 [train] | Actual: 34308, 74946 | Sampled: 34308, 74946
+Sampling 4/5 [ dev ] | Actual: 4384 , 9160  | Sampled: 4384, 9160

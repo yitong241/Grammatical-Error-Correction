@@ -1,0 +1,239 @@
+2024-04-10 19:20:04 | INFO | fairseq_cli.train | {'task': {'_name': 'translation', 'data': './wi+locness/bart.base/gec_data-bin', 'source_lang': 'orig', 'target_lang': 'corr', 'load_alignments': False, 'left_pad_source': True, 'left_pad_target': False, 'max_source_positions': 1024, 'max_target_positions': 1024, 'upsample_primary': -1, 'truncate_source': True, 'num_batch_buckets': 0, 'train_subset': 'train', 'dataset_impl': None, 'required_seq_len_multiple': 1, 'eval_bleu': False, 'eval_bleu_args': '{}', 'eval_bleu_detok': 'space', 'eval_bleu_detok_args': '{}', 'eval_tokenized_bleu': False, 'eval_bleu_remove_bpe': None, 'eval_bleu_print_samples': False}, 'criterion': {'_name': 'label_smoothed_cross_entropy', 'label_smoothing': 0.1, 'report_accuracy': False, 'ignore_prefix_size': 0, 'sentence_avg': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9, 0.999)', 'adam_eps': 1e-08, 'weight_decay': 0.01, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [3e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 500, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 20000.0, 'lr': [3e-05]}, 'common': {'no_progress_bar': False, 'log_interval': 100, 'log_format': 'simple', 'log_file': None, 'aim_repo': None, 'aim_run_hash': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': False, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': False, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'num_workers': 1, 'skip_invalid_size_inputs_valid_test': True, 'max_tokens': 4000, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 4000, 'batch_size_valid': None, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'max_epoch': 10, 'max_update': 0, 'stop_time_hours': 0.0, 'clip_norm': 0.1, 'sentence_avg': False, 'update_freq': [1], 'lr': [3e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False, 'debug_param_names': False}, 'checkpoint': {'save_dir': './wi+locness/bart.base/gec_bart', 'restore_file': './wi+locness/bart.base/model.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': False, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'beam': 5, 'beam_mt': 0, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'max_len_a_mt': 0.0, 'max_len_b_mt': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'lenpen_mt': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False, 'eos_token': None}, 'eval_lm': {'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'buffer_size': 0, 'input': '-'}, 'ema': {'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'tokenizer': None, 'bpe': None, 'model': Namespace(_name='bart_base', activation_fn='gelu', adam_betas='(0.9, 0.999)', adam_eps=1e-08, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, aim_repo=None, aim_run_hash=None, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, arch='bart_base', attention_dropout=0.3, azureml_logging=False, batch_size=None, batch_size_valid=None, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_shard_count=1, checkpoint_suffix='', clip_norm=0.1, combine_valid_subsets=None, continue_once=None, cpu=False, cpu_offload=False, criterion='label_smoothed_cross_entropy', curriculum=0, data='./wi+locness/bart.base/gec_data-bin', data_buffer_size=10, dataset_impl=None, ddp_backend='pytorch_ddp', ddp_comm_hook='none', debug_param_names=False, decoder_attention_heads=12, decoder_embed_dim=768, decoder_embed_path=None, decoder_ffn_embed_dim=3072, decoder_input_dim=768, decoder_layers=6, decoder_learned_pos=True, decoder_normalize_before=False, decoder_output_dim=768, device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, dropout=0.3, ema_decay=0.9999, ema_fp32=False, ema_seed_model=None, ema_start_update=0, ema_update_freq=1, empty_cache_freq=0, encoder_attention_heads=12, encoder_embed_dim=768, encoder_embed_path=None, encoder_ffn_embed_dim=3072, encoder_layers=6, encoder_learned_pos=True, encoder_normalize_before=False, end_learning_rate=0.0, eval_bleu=False, eval_bleu_args='{}', eval_bleu_detok='space', eval_bleu_detok_args='{}', eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=True, finetune_from_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=False, fp16_adam_stats=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, fp32_reduce_scatter=False, gen_subset='test', gradient_as_bucket_view=False, grouped_shuffling=False, heartbeat_timeout=-1, ignore_prefix_size=0, ignore_unused_valid_subsets=False, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_interval_updates_pattern=-1, keep_last_epochs=-1, label_smoothing=0.1, layernorm_embedding=True, left_pad_source=True, left_pad_target=False, load_alignments=False, load_checkpoint_on_all_dp_ranks=False, localsgd_frequency=3, log_file=None, log_format='simple', log_interval=100, lr=[3e-05], lr_scheduler='polynomial_decay', max_epoch=10, max_source_positions=1024, max_target_positions=1024, max_tokens=4000, max_tokens_valid=4000, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=False, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_reshard_after_forward=False, no_save=False, no_save_optimizer_state=False, no_scale_embedding=True, no_seed_provided=False, not_fsdp_flatten_parameters=False, nprocs_per_node=1, num_batch_buckets=0, num_shards=1, num_workers=1, on_cpu_convert_precision=False, optimizer='adam', optimizer_overrides='{}', patience=-1, pipeline_balance=None, pipeline_checkpoint='never', pipeline_chunks=0, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_devices=None, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_model_parallel=False, plasma_path='/tmp/plasma', pooler_activation_fn='tanh', pooler_dropout=0.0, power=1.0, profile=False, quantization_config_path=None, relu_dropout=0.0, report_accuracy=False, required_batch_size_multiple=8, required_seq_len_multiple=1, reset_dataloader=True, reset_logging=False, reset_lr_scheduler=False, reset_meters=True, reset_optimizer=True, restore_file='./wi+locness/bart.base/model.pt', save_dir='./wi+locness/bart.base/gec_bart', save_interval=1, save_interval_updates=0, seed=1, sentence_avg=False, shard_id=0, share_all_embeddings=True, share_decoder_input_output_embed=True, skip_invalid_size_inputs_valid_test=True, skip_remainder_batch=False, slowmo_base_algorithm='localsgd', slowmo_momentum=None, source_lang='orig', stop_min_lr=-1.0, stop_time_hours=0, store_ema=False, suppress_crashes=False, target_lang='corr', task='translation', tensorboard_logdir=None, threshold_loss_scale=None, tokenizer=None, total_num_update='20000', tpu=False, train_subset='train', truncate_source=True, update_epoch_batch_itr=False, update_freq=[1], update_ordered_indices_seed=False, upsample_primary=-1, use_bmuf=False, use_old_adam=False, use_plasma_view=False, use_sharded_state=False, user_dir=None, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, wandb_project=None, warmup_updates=500, weight_decay=0.01, write_checkpoints_asynchronously=False, zero_sharding='none')}
+2024-04-10 19:20:04 | INFO | fairseq.tasks.translation | [orig] dictionary: 51200 types
+2024-04-10 19:20:04 | INFO | fairseq.tasks.translation | [corr] dictionary: 51200 types
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | BARTModel(
+  (encoder): TransformerEncoderBase(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(51200, 768, padding_idx=1)
+    (embed_positions): LearnedPositionalEmbedding(1026, 768, padding_idx=1)
+    (layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0-5): 6 x TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoderBase(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(51200, 768, padding_idx=1)
+    (embed_positions): LearnedPositionalEmbedding(1026, 768, padding_idx=1)
+    (layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0-5): 6 x TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=768, out_features=51200, bias=False)
+  )
+  (classification_heads): ModuleDict()
+)
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | task: TranslationTask
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | model: BARTModel
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | criterion: LabelSmoothedCrossEntropyCriterion
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | num. shared model params: 140,138,496 (num. trained: 140,138,496)
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | num. expert model params: 0 (num. trained: 0)
+2024-04-10 19:20:08 | INFO | fairseq.data.data_utils | loaded 38,347 examples from: ./wi+locness/bart.base/gec_data-bin/valid.orig-corr.orig
+2024-04-10 19:20:08 | INFO | fairseq.data.data_utils | loaded 38,347 examples from: ./wi+locness/bart.base/gec_data-bin/valid.orig-corr.corr
+2024-04-10 19:20:08 | INFO | fairseq.tasks.translation | ./wi+locness/bart.base/gec_data-bin valid orig-corr 38347 examples
+2024-04-10 19:20:08 | INFO | fairseq.trainer | detected shared parameter: encoder.embed_tokens.weight <- decoder.embed_tokens.weight
+2024-04-10 19:20:08 | INFO | fairseq.trainer | detected shared parameter: encoder.embed_tokens.weight <- decoder.output_projection.weight
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | training on 1 devices (GPUs/TPUs)
+2024-04-10 19:20:08 | INFO | fairseq_cli.train | max tokens per device = 4000 and max sentences per device = None
+2024-04-10 19:20:08 | INFO | fairseq.trainer | Preparing to load checkpoint ./wi+locness/bart.base/model.pt
+2024-04-10 19:20:09 | INFO | fairseq.trainer | Loaded checkpoint ./wi+locness/bart.base/model.pt (epoch 11 @ 0 updates)
+2024-04-10 19:20:09 | INFO | fairseq.trainer | loading train data for epoch 1
+2024-04-10 19:20:09 | INFO | fairseq.data.data_utils | loaded 34,000 examples from: ./wi+locness/bart.base/gec_data-bin/train.orig-corr.orig
+2024-04-10 19:20:09 | INFO | fairseq.data.data_utils | loaded 34,000 examples from: ./wi+locness/bart.base/gec_data-bin/train.orig-corr.corr
+2024-04-10 19:20:09 | INFO | fairseq.tasks.translation | ./wi+locness/bart.base/gec_data-bin train orig-corr 34000 examples
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | reuse_dataloader = True
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | rebuild_batches = False
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | creating new batches for epoch 1
+2024-04-10 19:20:09 | INFO | fairseq_cli.train | begin dry-run validation on "valid" subset
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | reuse_dataloader = True
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | rebuild_batches = False
+2024-04-10 19:20:09 | INFO | fairseq.tasks.fairseq_task | creating new batches for epoch 1
+2024-04-10 19:20:13 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 19:20:13 | INFO | fairseq.trainer | begin training epoch 1
+2024-04-10 19:20:13 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 19:34:58 | INFO | train_inner | epoch 001:    100 / 199 loss=2.595, nll_loss=0.665, ppl=1.59, wps=392.3, ups=0.11, wpb=3471.4, bsz=181.1, num_updates=100, lr=6e-06, gnorm=1.265, clip=100, train_wall=882, wall=890
+2024-04-10 19:48:50 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 19:48:50 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 19:56:42 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 2.569 | nll_loss 0.467 | ppl 1.38 | wps 1679.9 | wpb 3524.6 | bsz 171.2 | num_updates 199
+2024-04-10 19:56:42 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 1 @ 199 updates
+2024-04-10 19:56:42 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint1.pt
+2024-04-10 19:56:43 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint1.pt
+2024-04-10 19:56:46 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint1.pt (epoch 1 @ 199 updates, score 2.569) (writing took 4.622419875000105 seconds)
+2024-04-10 19:56:46 | INFO | fairseq_cli.train | end of epoch 1 (average epoch stats below)
+2024-04-10 19:56:46 | INFO | train | epoch 001 | loss 2.578 | nll_loss 0.646 | ppl 1.56 | wps 316.4 | ups 0.09 | wpb 3490.2 | bsz 170.9 | num_updates 199 | lr 1.194e-05 | gnorm 1.239 | clip 100 | train_wall 1713 | wall 2198
+2024-04-10 19:56:46 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 19:56:46 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 19:56:46 | INFO | fairseq.trainer | begin training epoch 2
+2024-04-10 19:56:46 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 19:56:57 | INFO | train_inner | epoch 002:      1 / 199 loss=2.562, nll_loss=0.628, ppl=1.55, wps=266.3, ups=0.08, wpb=3511.9, bsz=161.2, num_updates=200, lr=1.2e-05, gnorm=1.211, clip=100, train_wall=841, wall=2209
+2024-04-10 20:10:42 | INFO | train_inner | epoch 002:    101 / 199 loss=2.555, nll_loss=0.621, ppl=1.54, wps=428.1, ups=0.12, wpb=3533, bsz=169, num_updates=300, lr=1.8e-05, gnorm=1.126, clip=100, train_wall=824, wall=3034
+2024-04-10 20:24:38 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 20:24:38 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 20:32:32 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 2.546 | nll_loss 0.442 | ppl 1.36 | wps 1668.7 | wpb 3524.6 | bsz 171.2 | num_updates 398 | best_loss 2.546
+2024-04-10 20:32:32 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 398 updates
+2024-04-10 20:32:32 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint2.pt
+2024-04-10 20:32:34 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint2.pt
+2024-04-10 20:32:36 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint2.pt (epoch 2 @ 398 updates, score 2.546) (writing took 4.0352077920006195 seconds)
+2024-04-10 20:32:36 | INFO | fairseq_cli.train | end of epoch 2 (average epoch stats below)
+2024-04-10 20:32:36 | INFO | train | epoch 002 | loss 2.561 | nll_loss 0.628 | ppl 1.54 | wps 323 | ups 0.09 | wpb 3490.2 | bsz 170.9 | num_updates 398 | lr 2.388e-05 | gnorm 1.193 | clip 100 | train_wall 1668 | wall 4348
+2024-04-10 20:32:36 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 20:32:36 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 20:32:36 | INFO | fairseq.trainer | begin training epoch 3
+2024-04-10 20:32:36 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 20:32:54 | INFO | train_inner | epoch 003:      2 / 199 loss=2.57, nll_loss=0.636, ppl=1.55, wps=258.5, ups=0.08, wpb=3442.2, bsz=172.8, num_updates=400, lr=2.4e-05, gnorm=1.267, clip=100, train_wall=851, wall=4366
+2024-04-10 20:46:32 | INFO | train_inner | epoch 003:    102 / 199 loss=2.566, nll_loss=0.631, ppl=1.55, wps=422.4, ups=0.12, wpb=3454.6, bsz=171.2, num_updates=500, lr=3e-05, gnorm=1.201, clip=100, train_wall=816, wall=5183
+2024-04-10 21:00:58 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 21:00:58 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 21:10:09 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 2.534 | nll_loss 0.428 | ppl 1.35 | wps 1438.7 | wpb 3524.6 | bsz 171.2 | num_updates 597 | best_loss 2.534
+2024-04-10 21:10:09 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 597 updates
+2024-04-10 21:10:09 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint3.pt
+2024-04-10 21:10:11 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint3.pt
+2024-04-10 21:10:14 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint3.pt (epoch 3 @ 597 updates, score 2.534) (writing took 5.4779480830002285 seconds)
+2024-04-10 21:10:14 | INFO | fairseq_cli.train | end of epoch 3 (average epoch stats below)
+2024-04-10 21:10:14 | INFO | train | epoch 003 | loss 2.547 | nll_loss 0.611 | ppl 1.53 | wps 307.3 | ups 0.09 | wpb 3490.2 | bsz 170.9 | num_updates 597 | lr 2.98508e-05 | gnorm 1.174 | clip 100 | train_wall 1700 | wall 6608
+2024-04-10 21:10:14 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 21:10:14 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 21:10:14 | INFO | fairseq.trainer | begin training epoch 4
+2024-04-10 21:10:14 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 21:10:41 | INFO | train_inner | epoch 004:      3 / 199 loss=2.528, nll_loss=0.591, ppl=1.51, wps=242.5, ups=0.07, wpb=3521.1, bsz=168.4, num_updates=600, lr=2.98462e-05, gnorm=1.147, clip=100, train_wall=894, wall=6635
+2024-04-10 21:27:05 | INFO | train_inner | epoch 004:    103 / 199 loss=2.529, nll_loss=0.593, ppl=1.51, wps=354.2, ups=0.1, wpb=3485, bsz=174, num_updates=700, lr=2.96923e-05, gnorm=1.188, clip=100, train_wall=982, wall=7619
+2024-04-10 21:43:55 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 21:43:55 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 21:53:43 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 2.501 | nll_loss 0.4 | ppl 1.32 | wps 1346.1 | wpb 3524.6 | bsz 171.2 | num_updates 796 | best_loss 2.501
+2024-04-10 21:53:43 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 796 updates
+2024-04-10 21:53:43 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint4.pt
+2024-04-10 21:53:44 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint4.pt
+2024-04-10 21:53:47 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint4.pt (epoch 4 @ 796 updates, score 2.501) (writing took 3.94759358400006 seconds)
+2024-04-10 21:53:47 | INFO | fairseq_cli.train | end of epoch 4 (average epoch stats below)
+2024-04-10 21:53:47 | INFO | train | epoch 004 | loss 2.529 | nll_loss 0.593 | ppl 1.51 | wps 265.8 | ups 0.08 | wpb 3490.2 | bsz 170.9 | num_updates 796 | lr 2.95446e-05 | gnorm 1.186 | clip 100 | train_wall 2017 | wall 9221
+2024-04-10 21:53:47 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 21:53:47 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 21:53:47 | INFO | fairseq.trainer | begin training epoch 5
+2024-04-10 21:53:47 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 21:54:28 | INFO | train_inner | epoch 005:      4 / 199 loss=2.526, nll_loss=0.59, ppl=1.51, wps=213.1, ups=0.06, wpb=3499.7, bsz=168.7, num_updates=800, lr=2.95385e-05, gnorm=1.177, clip=100, train_wall=1048, wall=9262
+2024-04-10 22:11:20 | INFO | train_inner | epoch 005:    104 / 199 loss=2.512, nll_loss=0.576, ppl=1.49, wps=345.9, ups=0.1, wpb=3501.9, bsz=180.3, num_updates=900, lr=2.93846e-05, gnorm=1.18, clip=100, train_wall=1010, wall=10274
+2024-04-10 22:28:28 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 22:28:28 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 22:37:27 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 2.493 | nll_loss 0.384 | ppl 1.31 | wps 1470.7 | wpb 3524.6 | bsz 171.2 | num_updates 995 | best_loss 2.493
+2024-04-10 22:37:27 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 995 updates
+2024-04-10 22:37:27 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint5.pt
+2024-04-10 22:37:28 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint5.pt
+2024-04-10 22:37:32 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint5.pt (epoch 5 @ 995 updates, score 2.493) (writing took 4.837778416000219 seconds)
+2024-04-10 22:37:32 | INFO | fairseq_cli.train | end of epoch 5 (average epoch stats below)
+2024-04-10 22:37:32 | INFO | train | epoch 005 | loss 2.511 | nll_loss 0.575 | ppl 1.49 | wps 264.8 | ups 0.08 | wpb 3490.2 | bsz 170.9 | num_updates 995 | lr 2.92385e-05 | gnorm 1.184 | clip 100 | train_wall 2075 | wall 11843
+2024-04-10 22:37:32 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 22:37:32 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 22:37:32 | INFO | fairseq.trainer | begin training epoch 6
+2024-04-10 22:37:32 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 22:38:32 | INFO | train_inner | epoch 006:      5 / 199 loss=2.508, nll_loss=0.571, ppl=1.49, wps=214, ups=0.06, wpb=3487.6, bsz=164.5, num_updates=1000, lr=2.92308e-05, gnorm=1.185, clip=100, train_wall=1084, wall=11903
+2024-04-10 22:55:14 | INFO | train_inner | epoch 006:    105 / 199 loss=2.477, nll_loss=0.537, ppl=1.45, wps=350.1, ups=0.1, wpb=3508.7, bsz=164.6, num_updates=1100, lr=2.90769e-05, gnorm=1.08, clip=100, train_wall=1000, wall=12906
+2024-04-10 23:11:06 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 23:11:06 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 23:20:27 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 2.473 | nll_loss 0.363 | ppl 1.29 | wps 1409.4 | wpb 3524.6 | bsz 171.2 | num_updates 1194 | best_loss 2.473
+2024-04-10 23:20:27 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 1194 updates
+2024-04-10 23:20:27 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint6.pt
+2024-04-10 23:20:30 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint6.pt
+2024-04-10 23:20:33 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint6.pt (epoch 6 @ 1194 updates, score 2.473) (writing took 5.152133999999933 seconds)
+2024-04-10 23:20:33 | INFO | fairseq_cli.train | end of epoch 6 (average epoch stats below)
+2024-04-10 23:20:33 | INFO | train | epoch 006 | loss 2.492 | nll_loss 0.554 | ppl 1.47 | wps 269.1 | ups 0.08 | wpb 3490.2 | bsz 170.9 | num_updates 1194 | lr 2.89323e-05 | gnorm 1.128 | clip 100 | train_wall 2010 | wall 14424
+2024-04-10 23:20:33 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-10 23:20:33 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-10 23:20:33 | INFO | fairseq.trainer | begin training epoch 7
+2024-04-10 23:20:33 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-10 23:21:37 | INFO | train_inner | epoch 007:      6 / 199 loss=2.507, nll_loss=0.57, ppl=1.48, wps=218.8, ups=0.06, wpb=3464.3, bsz=172.6, num_updates=1200, lr=2.89231e-05, gnorm=1.173, clip=100, train_wall=1013, wall=14489
+2024-04-10 23:38:11 | INFO | train_inner | epoch 007:    106 / 199 loss=2.492, nll_loss=0.555, ppl=1.47, wps=347.1, ups=0.1, wpb=3450.5, bsz=172.1, num_updates=1300, lr=2.87692e-05, gnorm=1.158, clip=100, train_wall=992, wall=15483
+2024-04-10 23:53:56 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-10 23:53:56 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 00:02:57 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 2.468 | nll_loss 0.36 | ppl 1.28 | wps 1466.7 | wpb 3524.6 | bsz 171.2 | num_updates 1393 | best_loss 2.468
+2024-04-11 00:02:57 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 1393 updates
+2024-04-11 00:02:57 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint7.pt
+2024-04-11 00:02:59 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint7.pt
+2024-04-11 00:03:02 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint7.pt (epoch 7 @ 1393 updates, score 2.468) (writing took 4.997588875001384 seconds)
+2024-04-11 00:03:02 | INFO | fairseq_cli.train | end of epoch 7 (average epoch stats below)
+2024-04-11 00:03:02 | INFO | train | epoch 007 | loss 2.476 | nll_loss 0.537 | ppl 1.45 | wps 272.4 | ups 0.08 | wpb 3490.2 | bsz 170.9 | num_updates 1393 | lr 2.86262e-05 | gnorm 1.094 | clip 100 | train_wall 1998 | wall 16974
+2024-04-11 00:03:02 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 00:03:02 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-11 00:03:02 | INFO | fairseq.trainer | begin training epoch 8
+2024-04-11 00:03:02 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-11 00:04:09 | INFO | train_inner | epoch 008:      7 / 199 loss=2.459, nll_loss=0.521, ppl=1.43, wps=226.6, ups=0.06, wpb=3531.2, bsz=170.4, num_updates=1400, lr=2.86154e-05, gnorm=1.026, clip=100, train_wall=1010, wall=17041
+2024-04-11 00:19:47 | INFO | train_inner | epoch 008:    107 / 199 loss=2.464, nll_loss=0.525, ppl=1.44, wps=370.4, ups=0.11, wpb=3472.2, bsz=179.8, num_updates=1500, lr=2.84615e-05, gnorm=1.062, clip=100, train_wall=936, wall=17979
+2024-04-11 00:37:05 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-11 00:37:05 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 00:49:07 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 2.482 | nll_loss 0.36 | ppl 1.28 | wps 1096 | wpb 3524.6 | bsz 171.2 | num_updates 1592 | best_loss 2.468
+2024-04-11 00:49:07 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 1592 updates
+2024-04-11 00:49:07 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint8.pt
+2024-04-11 00:49:09 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint8.pt
+2024-04-11 00:49:11 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint8.pt (epoch 8 @ 1592 updates, score 2.482) (writing took 3.9517625419975957 seconds)
+2024-04-11 00:49:11 | INFO | fairseq_cli.train | end of epoch 8 (average epoch stats below)
+2024-04-11 00:49:11 | INFO | train | epoch 008 | loss 2.46 | nll_loss 0.522 | ppl 1.44 | wps 250.9 | ups 0.07 | wpb 3490.2 | bsz 170.9 | num_updates 1592 | lr 2.832e-05 | gnorm 1.197 | clip 100 | train_wall 2038 | wall 19742
+2024-04-11 00:49:11 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 00:49:11 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-11 00:49:11 | INFO | fairseq.trainer | begin training epoch 9
+2024-04-11 00:49:11 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-11 00:50:51 | INFO | train_inner | epoch 009:      8 / 199 loss=2.454, nll_loss=0.516, ppl=1.43, wps=187.7, ups=0.05, wpb=3498.7, bsz=167.7, num_updates=1600, lr=2.83077e-05, gnorm=1.336, clip=100, train_wall=1136, wall=19843
+2024-04-11 01:10:53 | INFO | train_inner | epoch 009:    108 / 199 loss=2.454, nll_loss=0.514, ppl=1.43, wps=286.7, ups=0.08, wpb=3445, bsz=165.5, num_updates=1700, lr=2.81538e-05, gnorm=1.108, clip=100, train_wall=1199, wall=21044
+2024-04-11 01:28:33 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-11 01:28:33 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 01:38:26 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 2.444 | nll_loss 0.337 | ppl 1.26 | wps 1335.2 | wpb 3524.6 | bsz 171.2 | num_updates 1791 | best_loss 2.444
+2024-04-11 01:38:26 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 1791 updates
+2024-04-11 01:38:26 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint9.pt
+2024-04-11 01:38:29 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint9.pt
+2024-04-11 01:38:32 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint9.pt (epoch 9 @ 1791 updates, score 2.444) (writing took 6.020363458999782 seconds)
+2024-04-11 01:38:32 | INFO | fairseq_cli.train | end of epoch 9 (average epoch stats below)
+2024-04-11 01:38:32 | INFO | train | epoch 009 | loss 2.446 | nll_loss 0.507 | ppl 1.42 | wps 234.5 | ups 0.07 | wpb 3490.2 | bsz 170.9 | num_updates 1791 | lr 2.80138e-05 | gnorm 1.086 | clip 100 | train_wall 2358 | wall 22704
+2024-04-11 01:38:32 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 01:38:32 | INFO | fairseq.data.iterators | grouped total_num_itrs = 199
+2024-04-11 01:38:32 | INFO | fairseq.trainer | begin training epoch 10
+2024-04-11 01:38:32 | INFO | fairseq_cli.train | Start iterating over samples
+2024-04-11 01:40:10 | INFO | train_inner | epoch 010:      9 / 199 loss=2.435, nll_loss=0.496, ppl=1.41, wps=202.2, ups=0.06, wpb=3552.7, bsz=170.3, num_updates=1800, lr=2.8e-05, gnorm=1.049, clip=100, train_wall=1156, wall=22802
+2024-04-11 01:55:35 | INFO | train_inner | epoch 010:    109 / 199 loss=2.44, nll_loss=0.501, ppl=1.41, wps=376.1, ups=0.11, wpb=3478.9, bsz=178, num_updates=1900, lr=2.78462e-05, gnorm=1.088, clip=100, train_wall=923, wall=23727
+2024-04-11 02:09:03 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2024-04-11 02:09:03 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 02:17:11 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 2.443 | nll_loss 0.335 | ppl 1.26 | wps 1619.8 | wpb 3524.6 | bsz 171.2 | num_updates 1990 | best_loss 2.443
+2024-04-11 02:17:11 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 1990 updates
+2024-04-11 02:17:11 | INFO | fairseq.trainer | Saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint10.pt
+2024-04-11 02:17:14 | INFO | fairseq.trainer | Finished saving checkpoint to /Users/USER/Developer/Grammatical-Error-Correction/katsumata/BART-GEC/wi+locness/bart.base/gec_bart/checkpoint10.pt
+2024-04-11 02:17:18 | INFO | fairseq.checkpoint_utils | Saved checkpoint ./wi+locness/bart.base/gec_bart/checkpoint10.pt (epoch 10 @ 1990 updates, score 2.443) (writing took 6.16895645799741 seconds)
+2024-04-11 02:17:18 | INFO | fairseq_cli.train | end of epoch 10 (average epoch stats below)
+2024-04-11 02:17:18 | INFO | train | epoch 010 | loss 2.433 | nll_loss 0.494 | ppl 1.41 | wps 298.7 | ups 0.09 | wpb 3490.2 | bsz 170.9 | num_updates 1990 | lr 2.77077e-05 | gnorm 1.061 | clip 100 | train_wall 1827 | wall 25029
+2024-04-11 02:17:18 | INFO | fairseq.tasks.fairseq_task | can_reuse_epoch_itr = True
+2024-04-11 02:17:18 | INFO | fairseq_cli.train | done training in 25024.7 seconds
+fin
